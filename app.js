@@ -3,11 +3,14 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const dotenv = require('dotenv').config()
 
 // Set up mongoose connection
 const mongoose = require("mongoose");
 mongoose.set('strictQuery', false);
-const mongoDB = "mongodb+srv://tylerwschnabel:harry13@cluster0.7znbov6.mongodb.net/?retryWrites=true&w=majority";
+mongoDB = process.env.MONGODB_URI
+
+
 
 main().catch(err => console.log(err));
 async function main() {
