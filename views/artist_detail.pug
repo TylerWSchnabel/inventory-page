@@ -1,0 +1,23 @@
+extends layout
+
+block content
+
+  h1 Artist: #{artist.name}
+
+  div(style='margin-left:20px;margin-top:20px')
+
+    h4 Albums
+
+    dl
+      each album in artist_albums
+        dt
+          a(href=album.url) #{album.title}
+        dd #{album.summary}
+
+      else
+        p This artist has no albums.
+  hr
+  p
+  a(href=artist .url+'/delete') Delete Artist
+  p
+  a(href=artist.url+'/update') Update Artist

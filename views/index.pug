@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}. A fake record store made by Tyler Schnabel.
+
+    if error 
+      p Having trouble loading this page.
+    else 
+      p This is our current invnetory.
+
+      ul  
+        li #[strong Albums: ] !{data.album_count}
+        li #[strong Artists: ] !{data.artist_count}
+        li #[strong Genres: ] !{data.genre_count}

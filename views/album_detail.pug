@@ -1,0 +1,21 @@
+extends layout
+
+block content 
+
+    h1 Album: #{album.title}
+
+    p #[strong Artist: ]
+        a(href=album.artist.url) #{album.artist.name}
+    p #[strong Summary: ] #{album.summary}
+    p #[strong Genre: ] 
+        each val, index in album.genre 
+            a(href=val.url) #{val.name}
+            if index < album.genre.length - 1
+                |,
+
+        hr
+    p 
+        a(href=album.url+"/delete") Delete this album 
+    p   
+        a(href=album.url+"/update") Update this album
+
