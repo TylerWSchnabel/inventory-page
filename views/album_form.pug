@@ -17,7 +17,7 @@ block content
           else
             option(value=artist ._id) #{artist.name}
     div.form-group
-      label(for='summary') Summary:
+      label(for='summary') Album Summary:
       textarea#summary.form-control(type='textarea', placeholder='Summary' name='summary' required='true') #{undefined===album ? '' : album.summary}
     div.form-group
       label Genre:
